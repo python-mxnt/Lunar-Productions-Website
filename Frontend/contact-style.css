@@ -1,0 +1,215 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #000;
+    background-image: linear-gradient(135deg, #000 25%, #f8f8f8 100%);
+    min-height: 100vh;
+}
+
+/* Topbar Styles */
+.topbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(128, 0, 128, 0.3);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    overflow: visible;
+}
+
+.topbar::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8a2be2, #9370db, #da70d6, #8a2be2);
+    border-radius: 17px;
+    z-index: -1;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.topbar-3dlogo {
+    margin-left: 2rem;
+    /* Placeholder for 3D logo */
+}
+
+.topbar-buttons {
+    display: flex;
+    margin-right: 2rem;
+}
+
+.topbar-buttons div {
+    margin-left: 1rem;
+}
+
+.topbar-buttons button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+}
+
+.topbar-buttons button:hover {
+    background-color: rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f8f8f8;
+    margin: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.intro h3 {
+    color: #e74c3c;
+    margin: 1rem 0;
+}
+
+.intro h4 {
+    color: #000;
+    margin: 1rem 0;
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.2);
+}
+
+.mail button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.mail button:hover {
+    background-color: rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    transform: translateY(-2px);
+}
+
+.list-for-email {
+    list-style-type: none;
+    margin: 1rem auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.list-for-email li {
+    padding: 0.5rem;
+    background-color: #f8f8f8;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+}
+
+.list-for-email li::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.list-for-email li:hover::before {
+    opacity: 1;
+}
+
+.list-for-email li p {
+    color: #333;
+}
+
+/* Keyframe Animations */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(147, 112, 219, 0.8), 0 0 30px rgba(218, 112, 214, 0.6);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .topbar-3dlogo {
+        margin: 1rem 0;
+    }
+    
+    .topbar-buttons {
+        margin: 1rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .topbar-buttons div {
+        margin: 0 0.5rem;
+    }
+    
+    .intro {
+        margin: 1rem 0.5rem;
+    }
+}
